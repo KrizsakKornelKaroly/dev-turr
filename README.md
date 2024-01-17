@@ -2,7 +2,7 @@
 Projektversenyre készülő Türr100 weboldal repositoryja.
 
 
-#Feladatkörök
+# Feladatkörök
 ### Krizsák Kornél:
 - Anyaggyűjtés
 - Adatbázis-kezelés
