@@ -55,9 +55,30 @@ const aiconv = () => {
         </p>
       </div>
       <div className="ml-56 text-center bg-slate-50 h-3/4">
-        <p>Itt lesznek az üzenetek</p>
-        <p>Itt lesznek az üzenetek</p>
-        <p>Itt lesznek az üzenetek</p>
+        <div className="jimmy">
+          <div className="uzenet flex justify-start mx-28 py-5">
+              <Image
+                  width={227}
+                  height={200}
+                  quality={100}
+                  src="/images/bataAITest.jpg"
+                  className="hover:cursor-pointer hover:opacity-80 hover:bg-gray-500 min-h-10 max-h-10 min-w-10 max-w-10 rounded-sm "
+                />
+            <p className="text-center self-center flex ml-3">Jó napot kívánok! </p>
+          </div>
+        </div>
+        <div className="user">
+          <div className="uzenet flex justify-start mx-28 py-5">
+              <Image
+                  width={227}
+                  height={200}
+                  quality={100}
+                  src="/images/vargaAI.jpg"
+                  className="hover:cursor-pointer hover:opacity-80 hover:bg-gray-500 min-h-10 max-h-10 min-w-10 max-w-10 rounded-sm "
+                />
+            <p className="text-center self-center flex ml-3">Jimmy úgy gondolja...</p>
+          </div>
+        </div>
       </div>
       <div className="ml-56 flex justify-center">
         <div className="flex w-full max-w-xl items-center relative">
