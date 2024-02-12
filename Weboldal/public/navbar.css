@@ -1,0 +1,13 @@
+button{
+    background-color: #0876dc71;
+    border-radius: 90px;
+    padding: 25px;
+    margin: 5px;
+    color: white;
+    font-size: large;
+}
+.fullNav{
+    display: flex;
+    background-color: #579BE9;
+    height: 85px;
+}
