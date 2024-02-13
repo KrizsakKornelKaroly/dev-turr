@@ -1,13 +1,27 @@
-button{
+button {
     background-color: #0876dc71;
     border-radius: 90px;
-    padding: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding: 17px 30px 17px 30px;
     margin: 5px;
     color: white;
     font-size: large;
+    box-shadow: 1px 5px 5px black;
 }
 .fullNav{
     display: flex;
     background-color: #579BE9;
     height: 85px;
+    align-items: center;
+    justify-content: flex-start;
+}
+#profilkep{
+    padding: 0;
+    background-color: #579BE9;
+    box-shadow: none;
+}
+.userNav{
+    margin-left: auto;
+    padding-right: 10px;
 }

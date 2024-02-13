@@ -20,6 +20,16 @@ const Navbar = () => {
         <button>TürrArchívum</button>
         <button>Rólunk</button>
       </div>
+      <div className="userNav">
+          <button id="profilkep">
+          <Image
+                width={70}
+                height={67}
+                quality={100}
+                src="/images/Profilmenü.png"
+                className=""/>
+          </button>
+      </div>
     </div>
   );
 };
