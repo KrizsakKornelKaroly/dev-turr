@@ -3,7 +3,7 @@ button {
     border-radius: 90px;
     padding-left: 30px;
     padding-right: 30px;
-    padding: 17px 30px 17px 30px;
+    padding: 12px 25px 12px 25px;
     margin: 5px;
     color: white;
     font-size: large;
@@ -12,7 +12,7 @@ button {
 .fullNav{
     display: flex;
     background-color: #579BE9;
-    height: 85px;
+    height: 70px;
     align-items: center;
     justify-content: flex-start;
 }

@@ -23,8 +23,8 @@ const Navbar = () => {
       <div className="userNav">
           <button id="profilkep">
           <Image
-                width={70}
-                height={67}
+                width={60}
+                height={60}
                 quality={100}
                 src="/images/Profilmenü.png"
                 className=""/>
