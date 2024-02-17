@@ -6,11 +6,10 @@ const auth = getAuth(firebase_app);
 const registerUser = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    await sendEmailVerification(userCredential.user)
-    return { userCredential };
+    //await sendEmailVerification(userCredential.user);
+    return { userCredential, error: null };
   } catch (error) {
-    console.error(error);
-    return { error };
+    return { userCredential: null, error };
   }
 };
 
