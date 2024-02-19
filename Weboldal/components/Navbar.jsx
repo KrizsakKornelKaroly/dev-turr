@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
+import Link from "next/link";
 
 
 
@@ -27,9 +28,9 @@ const Navbar = () => {
         />
       </div>
       <div className="NavGombok">
-        <button>TürrMédia</button>
+        <button><Link href="/turrmedia">TürrMédia</Link></button>
         <button>TürrCast</button>
-        <button>TürrAI</button>
+        <button><Link href="/turrai">TürrAI</Link></button>
         <button>TürrArchívum</button>
         <button>Rólunk</button>
       </div>
