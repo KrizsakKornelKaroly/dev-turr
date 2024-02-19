@@ -1,5 +1,3 @@
-
-
 button {
     background-color: #0876dc71;
     border-radius: 90px;
@@ -28,6 +26,11 @@ button {
     padding-right: 10px;
 }
 @media screen and (max-width: 1000px) {
+    button {
+        padding: 10px 20px 10px 20px;
+    }
+}
+@media screen and (max-width: 930px) {
     .NavGombok{
         display: none;
     }

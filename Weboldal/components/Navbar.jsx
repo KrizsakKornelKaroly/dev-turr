@@ -43,18 +43,6 @@ const Navbar = () => {
                 className=""/>
           </button>
       </div>
-      <NavigationMenu>
-  <NavigationMenuList>
-    <NavigationMenuItem>
-      <NavigationMenuTrigger>Kezitstókolom</NavigationMenuTrigger>
-      <NavigationMenuContent>
-        <NavigationMenuLink>Link</NavigationMenuLink>
-        <NavigationMenuLink>Kálmán</NavigationMenuLink>
-      </NavigationMenuContent>
-    </NavigationMenuItem>
-  </NavigationMenuList>
-</NavigationMenu>
-
     </div>
     
   );
