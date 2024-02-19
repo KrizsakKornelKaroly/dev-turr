@@ -1,5 +1,18 @@
+"use client"
 import Image from "next/image";
 import navbar from "../public/navbar.css"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+
+
 
 const Navbar = () => {
   return (
@@ -30,7 +43,20 @@ const Navbar = () => {
                 className=""/>
           </button>
       </div>
+      <NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuItem>
+      <NavigationMenuTrigger>Kezitstókolom</NavigationMenuTrigger>
+      <NavigationMenuContent>
+        <NavigationMenuLink>Link</NavigationMenuLink>
+        <NavigationMenuLink>Kálmán</NavigationMenuLink>
+      </NavigationMenuContent>
+    </NavigationMenuItem>
+  </NavigationMenuList>
+</NavigationMenu>
+
     </div>
+    
   );
 };
 

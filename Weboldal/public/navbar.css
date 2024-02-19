@@ -1,3 +1,5 @@
+
+
 button {
     background-color: #0876dc71;
     border-radius: 90px;
@@ -24,4 +26,9 @@ button {
 .userNav{
     margin-left: auto;
     padding-right: 10px;
+}
+@media screen and (max-width: 1000px) {
+    .NavGombok{
+        display: none;
+    }
 }
