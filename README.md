@@ -6,7 +6,6 @@ Projektversenyre készülő Türr100 weboldal repositoryja.
 
 ### Krizsák Kornél:
 
-- Anyaggyűjtés
 - Grafikai tervek
 - Adatbázis-kezelés
 - TürrCast műsorvezetés, utómunkák
@@ -26,7 +25,7 @@ Projektversenyre készülő Türr100 weboldal repositoryja.
 - Grafikai tervek
 - Képszerkesztés
 - TürrCast műsorvezetés
-- Front-end programozás
+- Anyaggyűjtés
 
 ### Dávid Csaba:
 
