@@ -1,4 +1,5 @@
-navimport React, { useState, useEffect } from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 import NavbarDesktop from './NavbarDesktop';
 import NavbarMobile from './NavbarMobile';
 

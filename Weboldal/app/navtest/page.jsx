@@ -1,9 +1,10 @@
-import Navbar from "@/components/NavbarDesktop";
+import Navbar from "@/components/Navbar";
+
 
 const Navtest = () => {
     return(
         <div>
-            <Navbar></Navbar>
+            <Navbar/>
         </div>
     )
 }
