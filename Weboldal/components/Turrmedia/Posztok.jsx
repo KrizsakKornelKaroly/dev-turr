@@ -1,47 +1,26 @@
-import Image from "next/image"
+import Image from "next/image";
 
+const Posztok = async () => {
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,profile_picture&access_token=${process.env.INSTAGRAM_KEY}`;
+  const data = await fetch(url);
+  const feed = await data.json();
 
-const feeds = [
-    {
-        title: "Cím",
-        img: "/images/fokiAI.jpg"
-    },
-    {
-        title: "Cím2",
-        img: "/images/fokiAI.jpg"
-    },
-    {
-        title: "title",
-        img: "/images/fokiAI.jpg"
-    },
-    {
-        title: "title",
-        img: "/images/fokiAI.jpg"
-    },
-    {
-        title: "title",
-        img: "/images/fokiAI.jpg"
-    },
-    {
-        title: "title",
-        img: "/images/fokiAI.jpg"
-    }
-]
+  const images = feed.data;
+  return (
+    <>
+      <h1 className=" text-2xl">Posztok</h1>
+      {images.map((image) => {
+        return (
+          <div>
+            <img src={image.media_url} width={50} height={50} />
+            <h1>{image.caption}</h1>
 
-const Posztok = () => {
-    return (
-        <>
-            <h1 className=" text-2xl">Posztok</h1>
-            {feeds.map((feed) => {
-                return (
-                    <div className="w-56 min-w-56 max-w-56">
-                        <h1>{feed.title}</h1>
-                        <Image src={feed.img} width={50} height={50} />
-                    </div>
-                )
-            })}
-        </>
-    )
-}
+            <img src={images.profile_picture} width={10} height={10} />
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
-export default Posztok
+export default Posztok;
