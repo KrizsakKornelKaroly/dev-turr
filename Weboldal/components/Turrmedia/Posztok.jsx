@@ -11,11 +11,22 @@ const Posztok = async () => {
       <h1 className=" text-2xl">Posztok</h1>
       {images.map((image) => {
         return (
-          <div>
-            <img src={image.media_url} width={50} height={50} />
-            <h1>{image.caption}</h1>
-
-            <img src={images.profile_picture} width={10} height={10} />
+          <div key={image.caption} className="flex justify-evenly gap-5">
+            <div className="flex justify-center self-center items-center mx-auto border-2 border-black/70 rounded-sm bg-white">
+              <div className="mx-auto items-center self-center text-center">
+                <div className="">asd</div>
+                <img
+                  className="w-1/8"
+                  src={image.media_url}
+                  width={500}
+                  height={500}
+                />{" "}
+                <br />
+                <h1>{image.caption}</h1>
+              </div>
+            </div>
+            <div>b</div>
+            <div>c</div>
           </div>
         );
       })}
