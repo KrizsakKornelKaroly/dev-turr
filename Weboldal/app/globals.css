@@ -8,6 +8,10 @@ body,
   height: 100%;
 }
 
+.text-shadow-inside {
+  text-shadow: 0px 0px 9px black;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
