@@ -1,0 +1,17 @@
+Türr Hivatalos Oldal
+- www.turr.hu -
+
+Türr Kréta
+- https://idp.e-kreta.hu/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dkreta-web%26response_type%3Dcode%26scope%3Dopenid%2520email%26state%3DOpenIdConnect.AuthenticationProperties%253DMxXMrzI-hPMxzctcB7smiwmOEMUsJC_tx2cVhE1yDRQSU2rQUlcsRZyKoYI9tKU5-YZTQGO0UBBAi_TJvo8aIvl9HGIZxMmNLDCBNakCVewXkOGRRKm1PWda5WOyG1uL%26response_mode%3Dform_post%26nonce%3D638445313987828902.YjE2N2RiOGUtYzQ3ZC00ODAxLWEwM2ItNjk4NDBlZDlkZTFmODI0MmU5ODQtNWY1Yi00YTAyLTgwOGQtYTk5YjgzNmY1YTRl%26institute_code%3Dbszc-turr%26institute_data%3DeyJuZXh0X3VwZGF0ZV9kYXRlX3RpbWUiOiIyMDI0LjAzLjE5LiAyMjowMCIsImlzX3N6aXJfaW5zdGl0dXRlIjpmYWxzZSwiaXNfbGljZW5jZV92YWxpZCI6dHJ1ZSwiaXNfYXJjaGl2ZSI6ZmFsc2UsImlzX2Nzb2trZW50ZXR0X2dvbmR2aXNlbG8iOnRydWUsImlzX2ludGV6bWVueV9yb3ZpZG5ldiI6dHJ1ZSwiaXNfc3VjY2Vzc19hdXRob3JpemVkX2RhdGUiOmZhbHNlfQ%253D%253D%26prompt%3Dlogin%26redirect_uri%3Dhttps%253A%252F%252Fbszc-turr.e-kreta.hu%26x-client-SKU%3DID_NET461%26x-client-ver%3D5.3.0.0%26suppressed_prompt%3Dlogin -
+
+Email cím
+- titkarsag@turr.hu -
+
+Hivatalos FaceBook
+- https://m.facebook.com/p/Bajai-SZC-T%C3%BCrr-Istv%C3%A1n-Technikum-100063530801691/ -
+
+Instagram
+- https://www.instagram.com/turr_hirek/ -
+
+YouTube
+- https://www.youtube.com/@turristvantechnikum6334 -
