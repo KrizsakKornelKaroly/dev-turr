@@ -1,0 +1,14 @@
+.devteam{
+    background-color: pink;
+    width: 35%;
+    border-radius: 20px;
+}
+.widemanusok{
+    width: 100%;
+}
+h1, ul{
+    text-align: center;
+}
+ul{
+    list-style: inside;
+}
