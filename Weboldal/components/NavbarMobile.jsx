@@ -22,9 +22,9 @@ const NavbarMobile = () => {
       <div>
         <Image
           layout="responsive"
-          width={0}
-          height={0}
-          sizes="(max-width: 450px) 400px, (max-width: 930px) 633px, 633px"
+          width={243}
+          height={59.8}
+          sizes="(max-width: 450px) 100%, (max-width: 930px) 100%, 243px"
           quality={100}
           src="/images/turrszazwm.png"
           className=""
@@ -35,9 +35,9 @@ const NavbarMobile = () => {
         <Link href={"/"}>
           <Image
             layout="responsive"
-            width={0}
-            height={0}
-            sizes="(max-width: 450px) 600px, (max-width: 930px) 800px"
+            width={60}
+            height={60}
+            sizes="(max-width: 450px) 100%, (max-width: 930px) 100%, 40px"
             quality={100}
             src="/images/Profilmenü.png"
             className=""
@@ -53,18 +53,17 @@ const NavbarMobile = () => {
         </div>
 
         <ul
-          className={
+          className={`${
             nav
-              ? "fixed flex flex-col items-center justify-center gap-4 left-0 right-0 top-16 w-[85vw] h-auto rounded-b-[25px] py-5 px-2 border-r-gray-900 bg-navmenu  mx-auto"
-              : "w-[10px] h-auto fixed top-[-100%] bottom-0 "
-          }
+              ? "absolute z-[99] flex flex-col items-center justify-center gap-4 left-0 right-0 top-16 w-[85vw] rounded-b-[25px] py-5 px-2 border-r-gray-900 bg-navmenu mx-auto"
+              : "hidden"
+          }`}
         >
           {navItems.map((item) => (
-            <Link
-            id="navLink"
-              href={item.href}
-            >
-              <li className="flex items-center justify-center px-4 py-2 shadow-xl border-b-[3px] rounded-[90px] hover:opacity-70 bg-navgombok duration-150 cursor-pointer border-black mx-auto w-[72vw] text-2xl" key={item.id}>{item.text}</li>
+            <Link id="navLink" href={item.href} key={item.id}>
+              <li className="flex items-center justify-center px-4 py-2 shadow-xl border-b-[3px] rounded-[90px] hover:opacity-70 bg-navgombok duration-150 cursor-pointer border-black mx-auto w-[72vw] text-2xl">
+                {item.text}
+              </li>
             </Link>
           ))}
         </ul>
