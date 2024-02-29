@@ -32,7 +32,7 @@ const NavbarDesktop = () => {
         <button>TürrCast</button>
         <button><Link href="/turrai">TürrAI</Link></button>
         <button>TürrArchívum</button>
-        <button>Rólunk</button>
+        <button><Link href="/rolunk">Rólunk</Link></button>
       </div>
       <div className="userNav">
           <button id="profilkep">
