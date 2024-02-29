@@ -38,6 +38,42 @@ li{
     font-size: 1.2em;
     margin-top: 10px;
 }
+.content{
+    background-color: #B7CEF2;
+    width: 100%;
+    height: 700px;
+    border-radius: 15px;
+}
+.tagokdiv{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+}
+h2{
+    font-size: 2em;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.tagkepek{
+    margin-bottom: 15px;
+    background-color: lightgrey;
+    border-radius: 15px;
+    margin: 25px;
+    margin-top: 5px;
+}
+.kepmegnyito{
+    background-color: white;
+    box-shadow: none;
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
 @media screen and (max-width: 800px) {
     .pagecontent{
         flex-wrap: wrap;
@@ -48,4 +84,8 @@ li{
         margin: 1em;
         float: left;
     }
+    .tagokdiv{
+        flex-wrap: nowrap;
+    }
 }
+
