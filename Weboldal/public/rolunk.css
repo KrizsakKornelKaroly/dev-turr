@@ -1,14 +1,51 @@
-.devteam{
-    background-color: pink;
-    width: 35%;
-    border-radius: 20px;
+.devteam, .podcastteam{
+    width: 50%;
+    padding: 10px;
+    margin: 1em;
+    float: left;
 }
-.widemanusok{
-    width: 100%;
+.placeholderkep{
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px;
+    margin-bottom: 10px;
 }
 h1, ul{
     text-align: center;
 }
-ul{
-    list-style: inside;
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.pagecontent{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.tagcim{
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+li{
+    margin: 2px;
+    font-size: 1.1em;
+}
+.focim{
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+@media screen and (max-width: 800px) {
+    .pagecontent{
+        flex-wrap: wrap;
+    }
+    .devteam, .podcastteam{
+        width: 100%;
+        padding: 10px;
+        margin: 1em;
+        float: left;
+    }
 }
