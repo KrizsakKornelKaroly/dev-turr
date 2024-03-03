@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import rolunk from "../../public/rolunk.css";
 import Popup from 'reactjs-popup';
+import ReactModal from 'react-modal';
 
 const RolunkOldal = () => {
     return(
