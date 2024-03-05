@@ -72,4 +72,32 @@ h3{
     margin-bottom: 10px;
 }
 
-
+.bezaras{
+    position:absolute; 
+    bottom: 5px; 
+    left: 5px;
+    background-color: transparent;
+    box-shadow: none;
+    
+}
+@media screen and (max-width: 800px) {
+    .pagecontent{
+        flex-wrap: wrap;
+    }
+    .devteam, .podcastteam{
+        width: 100%;
+        padding: 10px;
+        margin: 0 auto;
+        float: left;
+    }
+    .bezaras{
+        left: auto;
+        bottom: auto;
+        top: 5px;
+        right: 5px;
+    }
+    .heading{
+        margin-top: 10px;
+    }
+    
+}
