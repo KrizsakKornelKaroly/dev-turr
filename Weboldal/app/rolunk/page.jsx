@@ -4,13 +4,19 @@ import Navbar from "@/components/Navbar";
 import rolunk from "../../public/rolunk.css";
 import Popup from 'reactjs-popup';
 import ReactModal from 'react-modal';
+import { GoX } from "react-icons/go";
+
+import { useState } from "react";
 
 const RolunkOldal = () => {
+    
+    const [open, setOpen] = useState(false);
+    
     return(
     <div>
         <Navbar />
         <ReactModal
-              isOpen={() => {<button className="kepmegnyito"></button>}}
+              isOpen={open}
               aria={{
                 labelledby: "heading",
                 describedby: "full_description"
@@ -106,131 +112,34 @@ const RolunkOldal = () => {
                                 </div>
                             </div>
                             <div>
-                                <button onClick=
-                                    {() => close()}>
-                                        Bezárás
+                                <button className="bezaras" onClick=
+                                    {() => setOpen(!open)}>
+                                        <GoX />
                                 </button>
                             </div>
               </div>
         </ReactModal>
-
-        <h1 className="focim">A képekre kattintva részletes leírást találhatsz a csapatok tagjairól!</h1>
-        <div className="pagecontent">
-        <div className="devteam">
-            <h1>Fejlesztőcsapat</h1>
-            
-            <Popup trigger=
-                {<button className="kepmegnyito">
+        {/*<button className="kepmegnyito" onClick={() => setShowModal(true)} */}
+        {/*<button className="kepmegnyito">
             <Image
                 width={243}
                 height={633}
                 quality={100}
                 src="/images/csapatplaceholder.png"
                 className="placeholderkep"
-            />
-            </button>} modal nested>
-                {
-                    close => (
-                        <div className='modal'>
-                            <div className='content'>
-                                <h1>Fejlesztőcsapat</h1>
-                                <div className="tagokdiv">
-                                <div>
-                                    <h3>Krizsák Kornél</h3>
-                                    <Image
-                                        width={243}
-                                        height={633}
-                                        quality={100}
-                                        src="/images/Profilmenü.png"
-                                        className="tagkepek"
-                                    />
-                                    <ul>
-                                        <li>Grafikai tervek</li>
-                                        <li>Adatbázis-kezelés</li>
-                                        <li>Front-end programozás</li>
-                                        <li>Digitalizáció</li>
-                                        <li>Dokumentáció</li>    
-                                    </ul>                      
-                                </div>
-                                <div>
-                                    <h3>Dávid Csaba</h3>
-                                    <Image
-                                        width={243}
-                                        height={633}
-                                        quality={100}
-                                        src="/images/Profilmenü.png"
-                                        className="tagkepek"
-                                    />
-                                    <ul>
-                                        <li>Grafikai tervek</li>
-                                        <li>Fiókrendszer</li>
-                                        <li>Adatbázis-kezelés</li>
-                                        <li>Hitelesítőrendszer</li>
-                                        <li>Full-stack programozás</li>    
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h2>Foki Zoltán</h2>
-                                    <Image
-                                        width={243}
-                                        height={633}
-                                        quality={100}
-                                        src="/images/Profilmenü.png"
-                                        className="tagkepek"
-                                    />
-                                    <ul>
-                                        <li>Mentor tanár</li>
-                                        <li>Scrum Master</li>
-                                        <li>Szakmai tanácsadó</li>
-                                        <li>Kapcsolattartó</li>    
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h3>Bujáki Erik Attila</h3>
-                                    <Image
-                                        width={243}
-                                        height={633}
-                                        quality={100}
-                                        src="/images/Profilmenü.png"
-                                        className="tagkepek"
-                                    />
-                                    <ul>
-                                        <li>Grafikai tervek</li>
-                                        <li>Képszerkesztés</li>
-                                        <li>Kapcsolattartás</li>
-                                        <li>Anyaggyűjtés</li>
-                                        <li>Dokumentáció</li>    
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h3>Dóczi Adrián Márk</h3>
-                                    <Image
-                                        width={243}
-                                        height={633}
-                                        quality={100}
-                                        src="/images/Profilmenü.png"
-                                        className="tagkepek"
-                                    />
-                                    <ul>
-                                        <li>TürrAI</li>
-                                        <li>Anyaggyűjtés</li>
-                                        <li>API kezelés</li>
-                                        <li>Szűrőrendszerek</li>
-                                        <li>Full-stack programozás</li>    
-                                    </ul>
-                                </div>
-                                </div>
-                            </div>
-                            <div>
-                                <button onClick=
-                                    {() => close()}>
-                                        Bezárás
-                                </button>
-                            </div>
-                        </div>
-                    )
-                }    
-            </Popup>
+            /></button>*/}
+        <h1 className="focim">A képekre kattintva részletes leírást találhatsz a csapatok tagjairól!</h1>
+        <div className="pagecontent">
+        <div className="devteam">
+            <h1>Fejlesztőcsapat</h1>
+            <button className="kepmegnyito" onClick={()=>setOpen(!open)}>
+            <Image
+                width={243}
+                height={633}
+                quality={100}
+                src="/images/csapatplaceholder.png"
+                className="placeholderkep"
+            /></button>
             <ul>
                 <li className="tagcim">Tagok:</li>
                 <li>Krizsák Kornél</li>
