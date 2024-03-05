@@ -74,8 +74,8 @@ h3{
 
 .bezaras{
     position:absolute; 
-    bottom: 5px; 
-    left: 5px;
+    top: 5px; 
+    right: 5px;
     background-color: transparent;
     box-shadow: none;
     
@@ -90,14 +90,7 @@ h3{
         margin: 0 auto;
         float: left;
     }
-    .bezaras{
-        left: auto;
-        bottom: auto;
-        top: 5px;
-        right: 5px;
+    h1{
+        margin-top: 30px;
     }
-    .heading{
-        margin-top: 10px;
-    }
-    
 }

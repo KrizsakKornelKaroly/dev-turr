@@ -10,13 +10,14 @@ import { useState } from "react";
 
 const RolunkOldal = () => {
     
-    const [open, setOpen] = useState(false);
-    
+    const [open1, setOpen1] = useState(false);
+    const [open2, setOpen2] = useState(false);
+     
     return(
     <div>
         <Navbar />
         <ReactModal
-              isOpen={open}
+              isOpen={open1}
               aria={{
                 labelledby: "heading",
                 describedby: "full_description"
@@ -113,60 +114,24 @@ const RolunkOldal = () => {
                             </div>
                             <div>
                                 <button className="bezaras" onClick=
-                                    {() => setOpen(!open)}>
-                                        <GoX />
+                                    {() => setOpen1(!open1)}>
+
+                                        <GoX className="text-4xl" />
                                 </button>
                             </div>
               </div>
         </ReactModal>
-        {/*<button className="kepmegnyito" onClick={() => setShowModal(true)} */}
-        {/*<button className="kepmegnyito">
-            <Image
-                width={243}
-                height={633}
-                quality={100}
-                src="/images/csapatplaceholder.png"
-                className="placeholderkep"
-            /></button>*/}
-        <h1 className="focim">A képekre kattintva részletes leírást találhatsz a csapatok tagjairól!</h1>
-        <div className="pagecontent">
-        <div className="devteam">
-            <h1>Fejlesztőcsapat</h1>
-            <button className="kepmegnyito" onClick={()=>setOpen(!open)}>
-            <Image
-                width={243}
-                height={633}
-                quality={100}
-                src="/images/csapatplaceholder.png"
-                className="placeholderkep"
-            /></button>
-            <ul>
-                <li className="tagcim">Tagok:</li>
-                <li>Krizsák Kornél</li>
-                <li>Bujáki "Kupak" Erik</li>
-                <li>Dóczi Adrián Márk</li>
-                <li>Dávid Csaba</li>
-                <li>Foki Zoltán</li>
-            </ul>
 
-        </div>
-
-        <div className="podcastteam">
-            <h1>Podcast-stáb</h1>
-            <Popup trigger=
-                {<button className="kepmegnyito">
-            <Image
-                width={243}
-                height={633}
-                quality={100}
-                src="/images/csapatplaceholder.png"
-                className="placeholderkep"
-            /></button>} modal nested>
-                {
-                    close => (
-                        <div className='modal'>
+        <ReactModal
+              isOpen={open2}
+              aria={{
+                labelledby: "heading",
+                describedby: "full_description"
+              }}>
+              <h1 id="heading">Podcast stáb</h1>
+              <div id="full_description">
+              <div className='modal'>
                             <div className='content'>
-                                <h1>Podcast-stáb</h1>
                                 <div className="tagokdiv">
                                 <div>
                                     <h3>Bujáki Erik Attila</h3>
@@ -242,15 +207,49 @@ const RolunkOldal = () => {
                                 </div>
                             </div>
                             <div>
-                                <button onClick=
-                                    {() => close()}>
-                                        Bezárás
+                            <button className="bezaras" onClick=
+                                    {() => setOpen2(!open2)}>
+
+                                        <GoX className="text-4xl" />
                                 </button>
                             </div>
                         </div>
-                    )
-                }    
-            </Popup>
+                                
+              </div>
+        </ReactModal>
+        <h1 className="focim">A képekre kattintva részletes leírást találhatsz a csapatok tagjairól!</h1>
+        <div className="pagecontent">
+        <div className="devteam">
+            <h1>Fejlesztőcsapat</h1>
+            <button className="kepmegnyito" onClick={()=>setOpen1(!open1)}>
+            <Image
+                width={243}
+                height={633}
+                quality={100}
+                src="/images/csapatplaceholder.png"
+                className="placeholderkep"
+            /></button>
+            <ul>
+                <li className="tagcim">Tagok:</li>
+                <li>Krizsák Kornél</li>
+                <li>Bujáki "Kupak" Erik</li>
+                <li>Dóczi Adrián Márk</li>
+                <li>Dávid Csaba</li>
+                <li>Foki Zoltán</li>
+            </ul>
+
+        </div>
+
+        <div className="podcastteam">
+            <h1>Podcast-stáb</h1>
+            <button className="kepmegnyito" onClick={()=>setOpen2(!open2)}>
+            <Image
+                width={243}
+                height={633}
+                quality={100}
+                src="/images/csapatplaceholder.png"
+                className="placeholderkep"
+            /></button>
             <ul>
                 <li className="tagcim">Tagok:</li>
                 <li>Bujáki Erik Attila</li>
