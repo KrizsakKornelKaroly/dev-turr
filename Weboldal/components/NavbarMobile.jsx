@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,50 +19,58 @@ const NavbarMobile = () => {
   ];
 
   return (
-    <div className="bg-navmenu flex justify-between items-center h-[70px] mx-auto px-4 text-white">
-      <div>
+    <div className="navbar bg-navmenu flex justify-between items-center h-[70px] mx-auto text-white">
+      <div className="flex items-center justify-center gap-5">
         <Image
           layout="responsive"
           width={243}
           height={59.8}
-          sizes="(max-width: 450px) 100%, (max-width: 930px) 100%, 243px"
+          sizes="(max-width: 300px) 130px, (max-width: 450px) 190px, (max-width: 930px) 243px"
           quality={100}
           src="/images/turrszazwm.png"
           className=""
+          alt="Türr logó"
         />
       </div>
 
-      <div className="flex items-center justify-center gap-5">
+      <div className="flex items-center justify-center gap-2 sm:gap-5">
         <Link href={"/"}>
           <Image
             layout="responsive"
             width={60}
             height={60}
-            sizes="(max-width: 450px) 100%, (max-width: 930px) 100%, 40px"
+            sizes="(max-width: 300px) 40px, (max-width: 450px) 50px, (max-width: 930px) 60px"
             quality={100}
             src="/images/Profilmenü.png"
             className=""
+            alt="Profilmenü"
           />
         </Link>
 
         <div onClick={handleNav} className="block">
           {nav ? (
-            <span className="close-icon">&#10006;</span>
+            <button className="close-icon">&#10006;</button>
           ) : (
-            <span className="menu-icon">&#x2630;</span>
+            <button className="menu-icon">&#x2630;</button>
           )}
         </div>
 
         <ul
-          className={`${
-            nav
-              ? "absolute z-[99] flex flex-col items-center justify-center gap-4 left-0 right-0 top-16 w-[85vw] rounded-b-[25px] py-5 px-2 border-r-gray-900 bg-navmenu mx-auto"
-              : "hidden"
-          }`}
+          style={{
+            opacity: nav ? 1 : 0,
+            transition: `opacity 150ms ease-in-out${nav ? " 150ms" : ""}`,
+            visibility: nav ? "visible" : "hidden",
+          }}
+          className="absolute z-[99] flex flex-col items-center justify-center gap-4 left-0 right-0 top-16 w-[85vw] rounded-b-[25px] py-5 px-2 border-r-gray-900 bg-navmenu mx-auto"
         >
           {navItems.map((item) => (
             <Link id="navLink" href={item.href} key={item.id}>
-              <li className="flex items-center justify-center px-4 py-2 shadow-xl border-b-[3px] rounded-[90px] hover:opacity-70 bg-navgombok duration-150 cursor-pointer border-black mx-auto w-[72vw] text-2xl">
+              <li
+                style={{
+                  transition: `opacity 150ms ease-in-out${nav ? " 150ms" : ""}`,
+                }}
+                className="flex items-center justify-center px-4 py-2 shadow-xl border-b-[3px] rounded-[90px] bg-navgombok hover:opacity-70 duration-150 cursor-pointer border-black mx-auto w-[72vw] text-2xl"
+              >
                 {item.text}
               </li>
             </Link>
@@ -70,18 +79,36 @@ const NavbarMobile = () => {
       </div>
 
       <style jsx>{`
-        .close-icon {
-          font-size: 2rem;
+        .navbar {
+          padding-right: 15px;
         }
 
+        .close-icon,
         .menu-icon {
-          font-size: 2rem;
+          width: 30px;
+          font-size: 2.5rem;
         }
 
         @media (max-width: 450px) {
           li {
             font-size: 20px;
             padding: 5px;
+          }
+
+          .close-icon,
+          .menu-icon {
+            font-size: 2rem;
+          }
+        }
+
+        @media (max-width: 300px) {
+          .navbar {
+            padding-right: 10px;
+          }
+
+          li {
+            font-size: 15px;
+            padding: 3px;
           }
 
           .close-icon,
