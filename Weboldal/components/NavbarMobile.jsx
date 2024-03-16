@@ -21,7 +21,7 @@ const NavbarMobile = () => {
   return (
     <div className="navbar bg-navmenu flex justify-between items-center h-[70px] mx-auto text-white">
       <div className="flex items-center justify-center gap-5">
-        <Image
+        <img
           layout="responsive"
           width={243}
           height={59.8}
@@ -35,7 +35,7 @@ const NavbarMobile = () => {
 
       <div className="flex items-center justify-center gap-2 sm:gap-5">
         <Link href={"/"}>
-          <Image
+          <img
             layout="responsive"
             width={60}
             height={60}
