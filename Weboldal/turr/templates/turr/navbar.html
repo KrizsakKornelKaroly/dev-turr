@@ -1,0 +1,302 @@
+<head>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body class="">
+  <nav
+    class="relative px-4 py-4 flex justify-between items-center bg-[#579BE9]"
+  >
+    <a class="text-3xl font-bold leading-none" href="{% url 'dashboard' %}">
+      <img class="h-10" src="/static/navbar_turr_logo.png" alt="" />
+    </a>
+    <div class="lg:hidden">
+      <button class="navbar-burger flex items-center text-blue-600 p-3">
+        <svg
+          class="block h-4 w-4 fill-current"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Mobile menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </button>
+    </div>
+    <ul
+      class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto"
+    >
+      <li>
+        <a href="{% url 'turrai' %}">
+          <button
+            class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-32 max-w-28 xl:min-w-56 xl:max-w-40 text-sm"
+          >
+            <p class="text-lg">TürrAI</p>
+          </button>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'turrmedia' %}">
+          <button
+            class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-32 max-w-28 xl:min-w-56 xl:max-w-40 text-sm"
+          >
+            <p class="text-lg">TürrMédia</p>
+          </button>
+        </a>
+      </li>
+
+      <li class="">
+        <!-- Mobil menü-->
+        <div
+          id="dropdown"
+          class="z-10 hidden bg-[#B7CEF2] divide-y divide-gray-100 rounded-lg shadow max-w-sm min-w-sm"
+        >
+          <div class="">
+            <p class="px-2 text-lg">Fiók</p>
+            <div class="">
+              <div class="flex">
+                <img class="w-1/4 h-1/4 mx-2" src="/static/pfp.png" alt="" />
+                {% if request.user.is_authenticated %}
+                <div class="flex-col">
+                  <p class="font-bold">{{ request.user.username }}</p>
+                  <p class="text-xs max-w-sm">{{ request.user.email }}</p>
+                </div>
+              </div>
+              <div class="">
+                {% else %}
+                <p>Üdv, vendég!</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <hr class="text-[#0875DC] bg-[#0875DC]" />
+          <div class="">
+            <p class="px-2 text-lg">Profil</p>
+            <ul
+              class="py-2 text-sm text-[#0875DC]"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <a
+                  href="{% url 'kijelentkezes' %}"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Profiladatok megtekintése</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{% url 'kijelentkezes' %}"
+                  class="block px-4 py-2 text-black"
+                  >TürrAI üzenetek száma: 0/5</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="">
+            <p class="px-2 text-lg">Megjelenés</p>
+            <ul
+              class="py-2 text-sm text-[#0875DC]"
+              aria-labelledby="dropdownDefaultButton"
+            >
+              <li>
+                <a
+                  href="{% url 'kijelentkezes' %}"
+                  class="block px-4 py-2 text-black"
+                  >Sötét mód:</a
+                >
+              </li>
+            </ul>
+          </div>
+          <ul
+            class="py-2 text-sm text-[#0875DC]"
+            aria-labelledby="dropdownDefaultButton"
+          >
+            <li>
+              <a
+                href="{% url 'kijelentkezes' %}"
+                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Kijelentkezés</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    {% if user.is_authenticated %}
+    <div class="justify-center hidden lg:flex">
+      <img
+        id="dropdownDefaultButton"
+        data-dropdown-toggle="dropdown"
+        class="w-12 h-auto cursor-pointer"
+        src="/static/pfp.png"
+        alt=""
+      />
+      <div
+        id="dropdown"
+        class="z-40 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+      >
+        <ul
+          class="py-2 text-sm text-gray-700 dark:text-gray-200"
+          aria-labelledby="dropdownDefaultButton"
+        >
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Settings</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Earnings</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'kijelentkezes' %}"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              >Kijelentkezés</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {% else %}
+    <div class="justify-center hidden lg:flex">
+      <a
+        class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+        href="{% url 'bejelentkezes' %}"
+        >Bejelentkezés</a
+      >
+      <a
+        class="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+        href="{% url 'regisztracio' %}"
+        >Regisztráció</a
+      >
+    </div>
+    {% endif %}
+  </nav>
+  <div class="navbar-menu relative z-50 hidden">
+    <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+    <nav
+      class="fixed top-0 left-0 bottom-0 flex flex-col w-1/2 max-w-md py-6 px-6 bg-white border-r overflow-y-auto"
+    >
+      <div class="flex items-center mb-8">
+        <a class="mr-auto text-3xl font-bold leading-none" href="#">
+          <img src="/static/navbar_turr_logo.png" class="p-2" alt="" />
+        </a>
+        <button class="navbar-close">
+          <svg
+            class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li class="mb-1">
+            <a
+              class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              href="{% url 'turrai' %}"
+              >Kezdőoldal</a
+            >
+          </li>
+          <li class="mb-1">
+            <a
+              class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              href="{% url 'turrmedia' %}"
+              >TürrMédia</a
+            >
+          </li>
+          <li class="mb-1">
+            <a
+              class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              href="#"
+              >Profil megtekintése</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="mt-auto">
+        <div class="pt-6">
+          <a
+            class="block px-4 py-3 mb-2 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl"
+            href="{% url 'bejelentkezes' %}"
+            >Bejelentkezés</a
+          >
+          <a
+            class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700 rounded-xl"
+            href="{% url 'regisztracio' %}"
+            >Regisztráció</a
+          >
+        </div>
+        <p class="my-4 text-xs text-center text-gray-400">
+          <span>Türr © 2024</span>
+        </p>
+      </div>
+    </nav>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // open
+    const burger = document.querySelectorAll(".navbar-burger");
+    const menu = document.querySelectorAll(".navbar-menu");
+
+    if (burger.length && menu.length) {
+      for (var i = 0; i < burger.length; i++) {
+        burger[i].addEventListener("click", function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle("hidden");
+          }
+        });
+      }
+    }
+
+    // zárva
+    const close = document.querySelectorAll(".navbar-close");
+    const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+    if (close.length) {
+      for (var i = 0; i < close.length; i++) {
+        close[i].addEventListener("click", function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle("hidden");
+          }
+        });
+      }
+    }
+
+    if (backdrop.length) {
+      for (var i = 0; i < backdrop.length; i++) {
+        backdrop[i].addEventListener("click", function () {
+          for (var j = 0; j < menu.length; j++) {
+            menu[j].classList.toggle("hidden");
+          }
+        });
+      }
+    }
+  });
+</script>

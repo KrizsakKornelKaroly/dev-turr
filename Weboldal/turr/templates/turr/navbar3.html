@@ -1,0 +1,65 @@
+{% load static tailwind_tags %}
+<html lang="en">
+  <head>
+    {% tailwind_css %}
+  </head>
+  <body>
+    <nav class="bg-[#579BE9] w-full min-h-20 max-h-28 h-20 flex justify-normal">
+      <div class="items-center self-center flex p-2">
+        <a href="{% url 'dashboard' %}">
+          <img
+            class="w-56 h-max items-center self-center flex justify-center max-w-none"
+            src="/static/navbar_turr_logo.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="hidden lg:flex justify-between items-center">
+        <a href="{% url 'turrmedia' %}">
+          <button
+            class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-28 max-w-28 xl:min-w-40 xl:max-w-40 text-sm"
+          >
+            <p class="text-lg">TürrMédia</p>
+          </button>
+        </a>
+        <button
+          class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-28 max-w-28 xl:min-w-40 xl:max-w-40 text-sm"
+        >
+          <p class="text-lg">TürrCast</p>
+        </button>
+        <a href="{% url 'turrai' %}">
+          <button
+            class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-28 max-w-28 xl:min-w-40 xl:max-w-40 text-sm"
+          >
+            <p class="text-lg">TürrAI</p>
+          </button>
+        </a>
+        <button
+          class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-28 max-w-28 xl:min-w-40 xl:max-w-40 text-sm"
+        >
+          <p class="text-lg">Archívum</p>
+        </button>
+        <button
+          class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-1 lg:py-2 lg:px-4 px-2 rounded-xl shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 m-4 min-w-28 max-w-28 xl:min-w-40 xl:max-w-40 text-sm"
+        >
+          <p class="text-lg">Rólunk</p>
+        </button>
+      </div>
+
+      <div class="flex justify-end w-full">
+        <img
+          class="hidden lg:flex w-40 h-20 p-2 cursor-pointer justify-end"
+          src="/static/profile.svg"
+          alt=""
+        />
+        <div class="lg:hidden">
+          <img
+            class="lg:hidden w-40 h-20 p-2 cursor-pointer justify-end"
+            src="/static/hamburgermenu.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

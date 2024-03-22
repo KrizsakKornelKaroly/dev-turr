@@ -1,0 +1,384 @@
+{% include 'turr/navbar.html' %} {% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TürrAI</title>
+    {% tailwind_css %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .bg-hero {
+        background: linear-gradient(to right, #4f46e5, #6b75ff);
+      }
+
+      .bg-content {
+        background: linear-gradient(to right, #02aab0, #00cdac);
+      }
+
+      .gomb1 {
+        background: linear-gradient(to right, #02aab0, #043c6d);
+      }
+
+      .hatterAIValasztos {
+        background: linear-gradient(to right, #e2eced, #b3ecf1);
+      }
+
+      .karakterekhattere {
+        background: linear-gradient(to right, #c0cfd0, #ffffff);
+      }
+
+      .aibemutatoszoveg {
+        background: linear-gradient(to right, #3b3b3b, #121212);
+      }
+      .modalHatter {
+        background: linear-gradient(to right, #010406, #586175);
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#e2eced]">
+    <div class="overflow-hidden">
+      <div class="lg:flex justify-between bg-[#e2eced] h-max">
+        <div class="szoveg text-center mx-auto flex justify-center">
+          <div class="szoveg mt-10 relative">
+            <h1
+              class="text-[#1d4157] text-3xl antialiased text-pretty font-['Urbanist']"
+            >
+              Bemutatkozik, a
+            </h1>
+            <h1 class="text-[#3da3bf] text-8xl font-bold font-['Urbanist']">
+              TürrAI
+            </h1>
+            <h1 class="font-['Urbanist']">
+              Próbálja ki iskolánk legújabb fejlesztését, az
+              <span
+                id="dropdownHoverButton"
+                data-dropdown-toggle="dropdownHover"
+                data-dropdown-trigger="hover"
+                class="decoration-dashed underline cursor-pointer"
+                >MI</span
+              >
+              alapú chatbotokat.
+            </h1>
+            <div
+              class="flex gap-5 p-10 text-center justify-center md:flex-row flex-col items-center"
+            >
+              <button
+                data-modal-target="static-modal"
+                data-modal-toggle="static-modal"
+                class="text-white font-['Urbanist'] text-xl font-bold gomb1 p-4 rounded-xl border-spacing-2 min-h-16 max-h-16 max-w-52 min-w-52"
+              >
+                Próbáld ki ingyen!
+              </button>
+              <a href="{% url 'turraiinformaciok' %}">
+                <button
+                  class="border-x font-['Urbanist'] text-xl border-y border-black p-4 rounded-xl min-h-16 max-h-16 max-w-52 min-w-52"
+                >
+                  Információk
+                </button>
+              </a>
+            </div>
+            <div class="max-w-screen-md">
+              <div class="bg-gray-300 mx-auto rounded-md mt-2">
+                <div
+                  class="flex justify-center flex-col items-center md:flex-row"
+                >
+                  <img class="w-1/6 p-3" src="/static/kezdelma.png" alt="" />
+                  <div class="min-w-96 max-w-96">
+                    <div class="flex flex-col">
+                      <h1
+                        class="text-2xl md:text-3xl lg:text-4xl font-['Urbanist']"
+                      >
+                        Kezdd el most
+                      </h1>
+                      <p>Kérdéseidre nagyon rövid időn választ kapsz.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-300 mx-auto rounded-md mt-2">
+                <div
+                  class="flex justify-center flex-col items-center md:flex-row"
+                >
+                  <img
+                    class="w-1/6 p-3"
+                    src="/static/meritsotletet.png"
+                    alt=""
+                  />
+                  <div class="min-w-96 max-w-96">
+                    <div class="flex flex-col">
+                      <h1
+                        class="text-2xl md:text-3xl lg:text-4xl font-['Urbanist']"
+                      >
+                        Meríts ötletet
+                      </h1>
+                      <p>Kérdéseidre nagyon rövid időn választ kapsz.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-300 mx-auto rounded-md my-2">
+                <div
+                  class="flex justify-center flex-col items-center md:flex-row"
+                >
+                  <img
+                    class="w-1/6 p-3"
+                    src="/static/gyarapitsdtudatod.png"
+                    alt=""
+                  />
+                  <div class="min-w-96 max-w-96">
+                    <div class="items-center">
+                      <h1
+                        class="text-2xl md:text-3xl lg:text-4xl font-['Urbanist']"
+                      >
+                        Tanulj
+                      </h1>
+                      <div class="flex flex-col items-center">
+                        <p>Gondot okoz a matek házi megoldása?</p>
+                        <p>Ne habozz tovább! Merj segítséget kérni!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="background hidden lg:block min-h-screen bg-[url('/static/AI_mainTheme.png')] bg-cover w-2/5"
+        ></div>
+      </div>
+    </div>
+    <div class="kulonleges w-full bg-[#D1F4F9] lg:h-max h-max">
+      <div class="flex justify-center">
+        <img width="75em" src="/static/AI_thinking.svg" alt="" />
+      </div>
+
+      <h1
+        class="text-black text-center text-3xl pt-2 text-pretty antialiased font-['Urbanist']"
+      >
+        Miben vagyunk különlegesek?
+      </h1>
+      <div class="flex justify-center font-['Urbanist']">
+        <div class="max-w-xl p-5">
+          <div
+            class="container bg-gradient-to-r p-4 aibemutatoszoveg rounded-lg"
+          >
+            <div class="text-white">
+              <p>
+                <span
+                  class="font-bold underline cursor-pointer"
+                  id="dropdownHoverButton"
+                  data-dropdown-toggle="dropdownHover2"
+                  data-dropdown-trigger="hover"
+                  >Tanár specifikus</span
+                >
+                chatbotjaink segítenek a tanulásban. Beszélgess kedvenc
+                tanárjaiddal, kérj segítséget, vagy
+                <span class="font-bold">bármilyen</span> információt iskolánkkal
+                kapcsolatban! Próbáld ki bátran,
+                <span class="font-bold">kérdezz bármit</span>!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <div class="flex justify-center py-8 gap-5 flex-wrap">
+          <div
+            class="flex flex-col max-w-sm bg-[#a9b9bb29] rounded-md p-2 self-center items-center"
+          >
+            <img class="w-1/4 max-w-sm" src="/static/teacher.png" alt="" />
+            <p class="text-center">
+              Szakra specializálódott tanárjaink segítenek elsajátítani az
+              anyagot
+            </p>
+          </div>
+          <div
+            class="flex flex-col max-w-sm bg-[#a9b9bb29] rounded-md p-2 self-center items-center"
+          >
+            <img class="w-1/4 max-w-sm" src="/static/school.png" alt="" />
+            <p class="text-center">
+              Bármilyen kérdésre választ kaphatsz iskolánkkal kapcsolatban
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full h-screen">
+      <h1
+        class="text-[#1d4157] text-6xl antialiased text-pretty text-center pt-5"
+      >
+        Hogyan működik?
+      </h1>
+      <div class="block lg:flex pt-32 justify-center w-full lg:pl-7">
+        <div class="keret pl-2 min-h-80 max-h-80">
+          <img
+            class="flex justify-center self-center items-center mx-auto min-h-56 max-h-56"
+            width="200em"
+            src="/static/registration.png"
+            alt=""
+          />
+          <div class="szoveg">
+            <p class="text-4xl hidden lg:block">Regisztráció</p>
+          </div>
+        </div>
+        <div class="keret px-10 min-h-80 max-h-80 hidden lg:block">
+          <p class="text-wrap text-center">Hozzáférés a mentett üzenetekhez.</p>
+          <img
+            class="flex justify-center self-center items-center mx-auto -my-5"
+            width="230em"
+            height="170em"
+            src="/static/nyil.svg"
+            alt=""
+          />
+        </div>
+        <div class="keret pl-2 min-h-80 max-h-80">
+          <img
+            class="flex justify-center self-center items-center mx-auto min-h-56 max-h-56"
+            src="/static/kivalasztas.png"
+            alt=""
+            width="260em"
+          />
+          <div class="szoveg">
+            <p class="text-4xl text-center hidden lg:block">Választás</p>
+          </div>
+        </div>
+        <div class="keret px-10 min-h-80 max-h-80 ml-2 hidden lg:block">
+          <p class="text-wrap text-center">
+            Beszélgetés indítása egy chatbottal.
+          </p>
+          <img
+            class="flex justify-center self-center items-center mx-auto -my-5"
+            width="230em"
+            height="170em"
+            src="/static/nyil.svg"
+            alt=""
+          />
+        </div>
+        <div class="keret pl-2 min-h-80 max-h-80">
+          <img
+            class="flex justify-center self-center items-center mx-auto pl-24 lg:min-h-56 lg:max-h-56 lg:pl-16"
+            src="/static/chateles.png"
+            alt=""
+            width="250em"
+          />
+          <div class="szoveg">
+            <p class="text-4xl text-center hidden lg:block">Chatelés</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="dropdownHover"
+      class="z-10 hidden bg-white rounded-lg shadow max-w-lg"
+    >
+      <div class="p-2 border-2 border-black">
+        <p>
+          Az MI (Mesterséges Intelligencia) olyan számítógépes technológia,
+          amely lehetővé teszi a gépek számára, hogy intelligensen viselkedjenek
+          és tanuljanak az emberi minták alapján.
+        </p>
+        <video
+          src="/static/mivideo.mp4"
+          preload="metadata"
+          autoplay
+          controls
+        ></video>
+      </div>
+    </div>
+
+    <div
+      id="dropdownHover2"
+      class="z-10 hidden karakterekhattere rounded-lg shadow max-w-lg"
+    >
+      <div class="p-2 border-2 border-black/70">
+        <p class="text-center p-2">
+          Gondolkodtál már azon, milyen lenne, ha nem kellene rengeteg időt
+          azzal elvesztegetni, hogy fontos információk után kutakodj iskolánk
+          weboldalán? Érdekelnek iskolánk eseményei?
+        </p>
+      </div>
+    </div>
+
+    <!-- Modal itt kezdődik -->
+    <div
+      id="static-modal"
+      data-modal-backdrop="static"
+      tabindex="-1"
+      aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+    >
+      <div class="relative p-4 w-full max-w-screen max-h-full">
+        <!-- Modal content -->
+        <div
+          class="relative bg-white rounded-lg shadow bg-gradient-to-r from-[#010406] from-10% via-[#212730] via-30% to-[#545c70] to-90%"
+        >
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600"
+          >
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              Kérlek válassz egy oktatót!
+            </h3>
+            <button
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+              data-modal-hide="static-modal"
+            >
+              <svg
+                class="w-3 h-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="mt-3">
+            <div class="flex justify-center py-8 gap-5 flex-wrap">
+              {% for tanar in ai_tanarok %}
+              <div
+                class="border border-black rounded-lg text-center relative bg-gray-500"
+              >
+                <a href="{{ tanar.href }}" class="block relative">
+                  <img
+                    src="{{ tanar.img }}"
+                    alt="{{ tanar.name }}"
+                    width="227"
+                    height="200"
+                    class="min-h-64 max-h-64 min-w-64 max-w-64 rounded-sm hover:opacity-45 hover:bg-gray-500"
+                  />
+                  <div class="my-3">
+                    <h1>{{ tanar.name }}</h1>
+                    <p class="text-foreground/80">{{ tanar.caption }}</p>
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

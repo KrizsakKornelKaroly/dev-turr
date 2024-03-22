@@ -1,0 +1,174 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    {% tailwind_css %}
+    <style>
+      .bg-hero {
+        background: linear-gradient(to right, #92ade1, rgb(47, 112, 202));
+      }
+
+      .bg-content {
+        background: linear-gradient(to right, #02aab0, #00cdac);
+      }
+    </style>
+  </head>
+
+  <body class="bg-hero">
+    <div class="min-h-screen flex">
+      <div
+        class="lg:w-1/2 h-[17vh] lg:h-screen bg-content flex items-center justify-center"
+      >
+        <div
+          class="rounded-l-2xl rounded-r-2xl bg-gradient-to-r from-cyan-100 to-blue-400"
+        >
+          <img
+            class="hidden lg:block h-screen w-screen"
+            src="{% static 'regisztracio_turr_logo.png' %}"
+            alt="Türr logó"
+          />
+        </div>
+      </div>
+
+      <div class="mx-auto pt-5 md:w-1/2 p-5">
+        <form method="post" class="bg-white rounded-lg shadow-lg p-8">
+          {% csrf_token %}
+
+          <img
+            class="block lg:hidden"
+            src="{% static 'regisztracio_turr_logo.png' %}"
+            alt="Türr logó"
+          />
+
+          <h1 class="text-4xl font-semibold text-gray-800 text-center">
+            Regisztráció
+          </h1>
+          <div class="mt-5">
+            <label
+              for="username"
+              class="block text-sm font-medium text-gray-700"
+              >Felhasználónév</label
+            >
+            {{ registerform.username }}
+          </div>
+          <div class="mt-5">
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email cím</label
+            >
+            {{ registerform.email }}
+          </div>
+          <div class="mt-5 flex">
+            <div>
+              <label
+                for="password1"
+                class="block text-sm font-medium text-gray-700"
+                >Jelszó</label
+              >
+
+              <input
+                oninput="jelszoEllenor()"
+                type="password"
+                id="password1"
+                name="password1"
+                class="block w-full px-4 py-2 mt-1 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div
+              class="text-wrap pt-5 text-center ml-4 flex justify-center items-center self-center"
+            >
+              <p id="min8">❌ Minimum 8 karakter</p>
+            </div>
+          </div>
+          <div class="mt-5 flex">
+            <div>
+              <label
+                for="password2"
+                class="block text-sm font-medium text-gray-700"
+                >Jelszó megerősítés</label
+              >
+              <input
+                oninput="jelszoEllenor()"
+                type="password"
+                id="password2"
+                name="password2"
+                class="block w-full px-4 py-2 mt-1 rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <div class="text-wrap text-center ml-4 pt-2">
+                <p id="jelszougyanaz" class="pt-6">❌ A két jelszó egyezik</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <button
+              onclick="return veglegeistes()"
+              type="submit"
+              class="w-full py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
+            >
+              Regisztráció
+            </button>
+
+            <div class="text-center">
+              <p id="hiba1" class="text-red-700 text-2xl"></p>
+              <p id="hiba2" class="text-red-500 text-md"></p>
+            </div>
+            {% for message in messages %}
+            <div class="text-center">
+              <p class="text-red-700 text-2xl">Sikertelen regisztráció!</p>
+              <p class="text-red-700 text-md">{{ message }}</p>
+            </div>
+            {% endfor %}
+            <p class="mt-4 text-center text-gray-500">
+              Már van fiókod?
+              <a
+                href="{% url 'bejelentkezes' %}"
+                class="text-blue-500 hover:underline"
+                >Bejelentkezés</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function jelszoEllenor() {
+        let error = false;
+        let jelszo1 = document.querySelector("#password1").value;
+        let jelszo2 = document.querySelector("#password2").value;
+
+        let minimumIgaz = document.querySelector("#min8");
+        //let kisnagybetukIgaz = document.querySelector("#kisnagybetuk");
+        let jelszougyanaz = document.querySelector("#jelszougyanaz");
+        //let betukszamokIgaz = document.querySelector("#betukszamok");
+
+        let minimumIgazEkkorHelyes = jelszo1.length >= 8;
+        //let kisnagybetukIgazEkkorHelyes =
+        /[a-z]/.test(jelszo1) && /[A-Z]/.test(jelszo1);
+        //let betukszamokIgazEkkorhelyes =
+        /[a-zA-Z0-9]{1,}/.test(jelszo1) && /[0-9]/.test(jelszo1);
+
+        minimumIgaz.textContent = "❌ Minimum 8 karakter";
+        //kisnagybetukIgaz.textContent = "❌ Kis és nagybetűk";
+        //betukszamokIgaz.textContent = "❌ Minimum 1 betű";
+        jelszougyanaz.textContent = "❌ A két jelszó egyezik";
+
+        if (minimumIgazEkkorHelyes) {
+          minimumIgaz.textContent = "✅ Minimum 8 karakter";
+        }
+        if (jelszo1 == jelszo2 && jelszo1.length > 0) {
+          jelszougyanaz.textContent = "✅ A két jelszó egyezik";
+        }
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  </body>
+</html>

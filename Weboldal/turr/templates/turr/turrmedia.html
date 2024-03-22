@@ -1,0 +1,68 @@
+{% include 'turr/navbar.html' %} {% load static tailwind_tags %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TürrMédia</title>
+  {% tailwind_css %}
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-6">Posztok</h1>
+    <!-- Szűrés -->
+
+    <div class="flex justify-end mb-4">
+      <button
+        id="datumszuro"
+        class="px-4 py-2 bg-blue-500 text-white rounded"
+        onclick="toggleSorting()"
+      >
+        Dátum szerint ⬇️
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for image in images %}
+      <div class="bg-white shadow rounded-lg overflow-hidden">
+        <img
+          src="{{ image.media_url }}"
+          alt="{{ image.caption }}"
+          class="w-full h-64 object-cover"
+        />
+        <div class="p-4">
+          <h2 class="text-xl font-semibold mb-2">
+            {{ image.caption|truncatechars:100 }}
+          </h2>
+          <p class="text-gray-600">@turrszaz</p>
+          <p class="text-gray-600/40">{{ image.timestamp|slice:":10" }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("selected_date").valueAsDate = new Date();
+
+    let reverse = false;
+    function toggleSorting() {
+      const images = document.querySelectorAll(".grid > div");
+      const reversedImages = Array.from(images).reverse();
+      const grid = document.querySelector(".grid");
+      const gomb = document.querySelector("#datumszuro");
+      grid.innerHTML = "";
+      reversedImages.forEach((image) => {
+        grid.appendChild(image);
+      });
+
+      reverse = !reverse;
+    }
+
+    document
+      .getElementById("filterButton")
+      .addEventListener("click", function () {
+        const selectedDate = document.getElementById("selected_date").value;
+        const formAction = `?selected_date=${selectedDate}`;
+        window.location.href = window.location.pathname + formAction; //
+      });
+  </script>
+</body>

@@ -1,0 +1,118 @@
+{% include 'turr/navbar.html' %} {% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TürrAI</title>
+    {% tailwind_css %}
+    <style>
+      .bg-hero {
+        background: linear-gradient(to right, #4f46e5, #6b75ff);
+      }
+
+      .bg-content {
+        background: linear-gradient(to right, #02aab0, #00cdac);
+      }
+
+      .gomb1 {
+        background: linear-gradient(to right, #02aab0, #043c6d);
+      }
+
+      .hatterAIValasztos {
+        background: linear-gradient(to right, #e2eced, #b3ecf1);
+      }
+
+      .karakterekhattere {
+        background: linear-gradient(to right, #c0cfd0, #ffffff);
+      }
+
+      .aibemutatoszoveg {
+        background: linear-gradient(to right, #3b3b3b, #121212);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="h-max">
+      <div class="flex">
+        <div class="w-full max-w-xs h-screen bg-white">
+          <div class="flex justify-center items-center gap-0 mt-2">
+            <img class="mx-auto w-1/4 h-1/2" src="/static/chat.svg" alt="" />
+            <p
+              class="text-black text-2xl text-center pr-2 text-pretty antialiased"
+            >
+              Beszélgetés ablakok
+            </p>
+          </div>
+          <div class="flex gap-3 p-2">
+            <button class="bg-blue-600 p-3 rounded-lg w-full max-w-md">
+              <p class="text-white font-bold">Új chat</p>
+            </button>
+            <button
+              class="bg-white p-3 rounded-lg w-1/2 max-w-sm border-2 border-gray-400"
+            >
+              <p class="text-black">Segítség</p>
+            </button>
+          </div>
+          <div class="">
+            <div
+              class="flex m-2 p-2 max-w-md justify-center self-center items-center border-2 border-gray-300/50"
+            >
+              <img class="w-1/4" src="/static/chat2.png" alt="" />
+              <p class="text-center">Miért nincs a tevéknek...</p>
+            </div>
+            <div
+              class="flex m-2 p-2 max-w-md justify-center self-center items-center border-2 border-gray-300/50"
+            >
+              <img class="w-1/4" src="/static/chat2.png" alt="" />
+              <p class="text-center">Miért nincs a tevéknek...</p>
+            </div>
+            <div
+              class="flex m-2 p-2 max-w-md justify-center self-center items-center border-2 border-gray-300/50"
+            >
+              <img class="w-1/4" src="/static/chat2.png" alt="" />
+              <p class="text-center">Miért nincs a tevéknek...</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full h-screen bg-teal-100/60">
+          <div class="md:h-1/6 lg:max-h-[6em] bg-gray-500 text-center">
+            Jelenleg nincs munkában :(
+          </div>
+          <div class="--- CONTENT PAGE ---">
+            <div class="mx-auto mt-5 w-1/2 max-w-md">
+              <p
+                class="p-3 bg-white border-gray-400 text-black border-2 text-center"
+              >
+                Hogyan építsek fel egy hálózatot?
+              </p>
+            </div>
+            <div class="mx-auto mt-5 w-1/2 max-w-md">
+              <p
+                class="p-3 bg-white border-gray-400 text-black border-2 text-center"
+              >
+                Hogyan építsek fel egy hálózatot?2
+              </p>
+            </div>
+            <div class="mx-auto mt-5 w-1/2 max-w-md">
+              <p
+                class="p-3 bg-white border-gray-400 text-black border-2 text-center"
+              >
+                Hogyan építsek fel egy hálózatot?3
+              </p>
+            </div>
+            <div class="mx-auto mt-5 w-1/2 max-w-md">
+              <p
+                class="p-3 bg-white border-gray-400 text-black border-2 text-center"
+              >
+                Hogyan építsek fel egy hálózatot?4
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>TürrAI</h3>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    {% tailwind_css %}
+    <style>
+      .bg-hero {
+        background: linear-gradient(to right, #92ade1, rgb(47, 112, 202));
+      }
+
+      .bg-content {
+        background: linear-gradient(to right, #02aab0, #00cdac);
+      }
+    </style>
+  </head>
+
+  <body class="bg-hero">
+    <div class="min-h-screen flex">
+      <div
+        class="lg:w-1/2 h-[17vh] lg:h-screen bg-content flex items-center justify-center"
+      >
+        <div
+          class="rounded-l-2xl rounded-r-2xl bg-gradient-to-r from-cyan-100 to-blue-400"
+        >
+          <img
+            class="hidden lg:block h-screen w-screen"
+            src="{% static 'regisztracio_turr_logo.png' %}"
+            alt="Türr logó"
+          />
+        </div>
+      </div>
+
+      <div class="mx-auto pt-5 md:w-1/2 p-5">
+        <form method="post" class="bg-white rounded-lg shadow-lg p-8">
+          {% csrf_token %}
+
+          <img
+            class="block lg:hidden"
+            src="{% static 'regisztracio_turr_logo.png' %}"
+            alt="Türr logó"
+          />
+
+          <h1 class="text-4xl font-semibold text-gray-800 text-center">
+            Bejelentkezés
+          </h1>
+          <div class="mt-5">
+            <label
+              class="flex justify-center"
+              for="username"
+              class="block text-sm font-medium text-gray-700"
+              >Felhasználónév</label
+            >
+            <span class="flex justify-center"> {{ loginform.username }} </span>
+          </div>
+          <div class="mt-5">
+            <label
+              class="flex justify-center"
+              for="email"
+              class="block text-sm font-medium text-gray-700"
+              >Jelszó</label
+            >
+            <span class="flex justify-center"> {{ loginform.password }} </span>
+          </div>
+
+          <div class="mt-8">
+            <button
+              type="submit"
+              class="w-full py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300"
+            >
+              Bejelentkezés
+            </button>
+            {% for message in messages %}
+            <div class="text-center">
+              <p class="text-red-700 text-2xl">Sikertelen bejelentkezés!</p>
+              <p class="text-red-700 text-md">{{ message }}</p>
+            </div>
+            {% endfor %}
+            <p class="mt-4 text-center text-gray-500">
+              Még nincs fiókod?
+              <a
+                href="{% url 'regisztracio' %}"
+                class="text-blue-500 hover:underline"
+                >Regisztráció</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

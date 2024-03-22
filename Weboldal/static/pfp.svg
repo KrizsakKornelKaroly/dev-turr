@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" _SVGFile__filename="oldscale/apps/kuser.svg" version="1.0" viewBox="0 0 60 60">
+ <path d="m30 5.625c-10.072 0-18.25 8.178-18.25 18.25 0 5.857 2.831 11.005 7.125 14.344-5.523 3.59-9.0903 9.692-11.312 16.156h44.875c-2.099-6.526-5.501-12.763-10.876-16.5 4.046-3.348 6.688-8.343 6.688-14 0-10.072-8.178-18.25-18.25-18.25z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+ <g transform="translate(.95543 -1.0301)" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+  <path d="m51.476 55.406c-2.206-6.861-5.793-13.494-11.664-17.138-5.911-0.257-13.352 0-20.548 0-6.372 3.391-10.242 10.129-12.651 17.138" fill="#b98fc0"/>
+  <path d="m47.29 24.9c0 10.072-8.174 18.246-18.245 18.246-10.072 0-18.246-8.174-18.246-18.246 0-10.071 8.174-18.246 18.246-18.246 10.071 4e-4 18.245 8.175 18.245 18.246z" fill="#d1b0d2"/>
+ </g>
+</svg>
